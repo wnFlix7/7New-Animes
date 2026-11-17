@@ -358,7 +358,7 @@ function hero(){
   var d=document.getElementById("dots");d.innerHTML="";
   for(var k=0;k<5;k++){var i=document.createElement("i");if(k===hi%5)i.className="on";d.appendChild(i)}
 }
-hero();setInterval(function(){hi=(hi+1)%5;hero()},5000);
+setInterval(function(){hi=(hi+1)%5;hero()},5000);
 document.getElementById("hero").onclick=function(e){if(!e.target.closest(".top,#sb"))show(A[hi])};
 SRC.forEach(function(g){var b=document.createElement("button");b.setAttribute("aria-label",g);var im=document.createElement("img");im.src=IMG[g];im.alt=g;b.appendChild(im);b.onclick=function(){gen=(gen===g)?null:g;[].forEach.call(document.getElementById("src").children,function(x){x.classList.toggle("on",x===b&&gen!==null)});build()};document.getElementById("src").appendChild(b)});
 document.getElementById("sbtn").onclick=function(e){e.stopPropagation();var s=document.getElementById("sb");s.classList.toggle("show");if(s.classList.contains("show"))s.focus()};
